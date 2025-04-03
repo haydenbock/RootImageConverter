@@ -8,10 +8,10 @@ input_folder <- "~/Library/CloudStorage/OneDrive-ThePennsylvaniaStateUniversity(
 output_folder <- "~/Library/CloudStorage/OneDrive-ThePennsylvaniaStateUniversity(2)/PennState/GitRepo/RootImageConverter/BWImages"
 
 # List all .tif files in the input folder
-# change to .jpeg or other file name if not .tif images
-tif_files <- list.files(input_folder, pattern = "\\.jpeg$", full.names = TRUE)
+# NOTE - change to .jpeg$ or other file name if not .tif images
+tif_files <- list.files(input_folder, pattern = "\\.tif$", full.names = TRUE)
 
-# Convert each image
+# Iterative loop for reading through files.
 for (file in tif_files) {
   # Read the image
   img <- image_read(file)
